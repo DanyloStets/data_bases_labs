@@ -155,23 +155,6 @@ INSERT INTO passenger (id, name, surname, numbers) VALUES
 (14, 'Nathan', 'Clark', 556677889),
 (15, 'Olivia', 'Lewis', 667788990);
 
-INSERT INTO schedules (id, time_departure, arrival_time, driver_id, bus_id, route_id) VALUES
-(1, 8.30, 12.00, 1, 1, 1),
-(2, 9.00, 12.30, 2, 2, 2),
-(3, 9.30, 13.00, 3, 3, 3),
-(4, 10.00, 13.30, 4, 4, 4),
-(5, 10.30, 14.00, 5, 5, 5),
-(6, 11.00, 14.30, 6, 6, 6),
-(7, 11.30, 15.00, 7, 7, 7),
-(8, 12.00, 15.30, 8, 8, 8),
-(9, 12.30, 16.00, 9, 9, 9),
-(10, 13.00, 16.30, 10, 10, 10),
-(11, 13.30, 17.00, 11, 11, 11),
-(12, 14.00, 17.30, 12, 12, 12),
-(13, 14.30, 18.00, 13, 13, 13),
-(14, 15.00, 18.30, 14, 14, 14),
-(15, 15.30, 19.00, 15, 15, 15);
-
 INSERT INTO stops (id, stop_name, distance_from_prev, price_to_next, route_id) VALUES
 (1, 'Stop 1', 0, 50, 1),
 (2, 'Stop 2', 15, 45, 1),
