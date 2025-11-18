@@ -13,10 +13,12 @@ db = SQLAlchemy()
 def test_connection():
     try:
         connection = pymysql.connect(
-            host='localhost', 
+            host='cloud-labs-db.mysql.database.azure.com', 
             port=3306,
-            user='root',
-            password='root'
+            user='daniel',
+            password='Danylo.2006',
+            database="lab1",
+            ssl={"ca": "/home/Daniel/DigiCertGlobalRootG2.crt.pem"}
         )
         cursor = connection.cursor()
         cursor.execute("SELECT VERSION()")
@@ -40,13 +42,15 @@ def create_app():
 
 def create_database():
     connection = pymysql.connect(
-        host='localhost',
+        host='cloud-labs-db.mysql.database.azure.com',
         port=3306,
-        user='root',
-        password='root',
+        user='daniel',
+        password='Danylo.2006',
+	database="lab1",
+	ssl={"ca": "/home/Daniel/DigiCertGlobalRootG2.crt.pem"}
     )
     cursor = connection.cursor()
-    cursor.execute("CREATE DATABASE IF NOT EXISTS local_flixbus")
+    cursor.execute("CREATE DATABASE IF NOT EXISTS lab1")
     cursor.close()
     connection.close()
 
@@ -60,10 +64,12 @@ def populate_data():
     sql_file_path = os.path.abspath('.data.sql')
     if os.path.exists('.data.sql'):
         connection = pymysql.connect(
-            host='localhost',
-            user='root',
-            password='root',
-            database='local_flixbus'
+            host='cloud-labs-db.mysql.database.azure.com',
+            user='daniel',
+            password='Danylo.2006',
+            database='lab1',
+	    port=3306,
+	    ssl={"ca": "/home/Daniel/DigiCertGlobalRootG2.crt.pem"}
         )
         cursor = connection.cursor()
         with open(sql_file_path, 'r') as sql_file:
