@@ -51,5 +51,5 @@ def protected():
     return jsonify({"message": "This is protected!"})
 
 if __name__ == '__main__':
-    app.run(debug=False, use_reloader=False)
+    app.run(debug=False, use_reloader=False, host="0.0.0.0", port=5000)
 
